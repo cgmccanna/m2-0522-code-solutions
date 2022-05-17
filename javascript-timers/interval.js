@@ -1,4 +1,5 @@
 var heading = document.querySelector('.countdown-display');
+var countdown = null;
 function replace() {
   if (heading.textContent === '4') {
     heading.textContent = '3';
@@ -8,8 +9,7 @@ function replace() {
     heading.textContent = '1';
   } else if (heading.textContent === '1') {
     heading.textContent = '~Earth Beeeelooowww Us~';
+    clearInterval(countdown);
   }
 }
-var countdown = setInterval(replace, 1000);
-setInterval(replace, 1000);
-clearInterval(countdown);
+countdown = setInterval(replace, 1000);
